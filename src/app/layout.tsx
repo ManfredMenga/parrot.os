@@ -23,15 +23,15 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'LeitSalon | Die Agentur für Premium-Wachstum',
+  title: 'Leitkraft | 120 Posts pro Monat. 3 Plattformen. Null Burnout.',
   description:
-    'Digitale Exzellenz für Premium-Salons. Wir verwandeln meisterhaftes Handwerk in digitale Anziehungskraft.',
-  keywords: ['friseur marketing', 'salon marketing', 'premium salon', 'digitale sichtbarkeit'],
-  authors: [{ name: 'LeitSalon' }],
+    'KI-generierter Content der aussieht, als hätte dein Team eine Woche daran gearbeitet — fertig in Minuten. Für D2C-Brands, Gastro, Beauty & Coaches.',
+  keywords: ['ki content', 'social media automatisierung', 'content marketing', 'instagram posts', 'ai content generator'],
+  authors: [{ name: 'Leitkraft' }],
   openGraph: {
-    title: 'LeitSalon | Die Agentur für Premium-Wachstum',
+    title: 'Leitkraft | 120 Posts pro Monat. 3 Plattformen. Null Burnout.',
     description:
-      'Digitale Exzellenz für Premium-Salons. Wir verwandeln meisterhaftes Handwerk in digitale Anziehungskraft.',
+      'KI-generierter Content der aussieht, als hätte dein Team eine Woche daran gearbeitet — fertig in Minuten.',
     type: 'website',
   },
 };
