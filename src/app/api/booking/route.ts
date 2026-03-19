@@ -6,9 +6,19 @@ export async function POST(req: NextRequest) {
   try {
     const { name, email, phone, date, time, duration } = await req.json();
 
-    // Validate
-    if (!name || !email || !date || !time || !duration) {
+    // Validate required fields
+    if (!name || !email || !phone || !date || !time || !duration) {
       return NextResponse.json({ error: 'Fehlende Felder' }, { status: 400 });
+    }
+
+    // Validate email
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      return NextResponse.json({ error: 'Ungültige E-Mail-Adresse' }, { status: 400 });
+    }
+
+    // Validate phone
+    if (!/^\+?[0-9\s\-\(\)]{7,18}$/.test(phone)) {
+      return NextResponse.json({ error: 'Ungültige Telefonnummer' }, { status: 400 });
     }
 
     // Build event start/end

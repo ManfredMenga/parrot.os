@@ -89,6 +89,20 @@ export default function Booking() {
     setSubmitting(true);
     setError(null);
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!emailRegex.test(formData.email)) {
+      setError('Bitte gib eine gültige E-Mail-Adresse ein.');
+      setSubmitting(false);
+      return;
+    }
+
+    const phoneClean = formData.phone.replace(/[\s\-\(\)]/g, '');
+    if (!/^\+?[0-9]{7,15}$/.test(phoneClean)) {
+      setError('Bitte gib eine gültige Telefonnummer ein.');
+      setSubmitting(false);
+      return;
+    }
+
     const selectedDateObj = dates[selectedDate];
     const dateStr = `${selectedDateObj.getFullYear()}-${String(selectedDateObj.getMonth() + 1).padStart(2, '0')}-${String(selectedDateObj.getDate()).padStart(2, '0')}`;
 
@@ -276,6 +290,7 @@ export default function Booking() {
               <input
                 type="email"
                 required
+                pattern="[^\s@]+@[^\s@]+\.[^\s@]{2,}"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="w-full bg-white/5 border border-[#1a1a1a] rounded-lg px-4 py-3 text-sm text-white placeholder:text-[#444] focus:outline-none focus:border-white/20 transition-colors"
@@ -287,6 +302,7 @@ export default function Booking() {
               <input
                 type="tel"
                 required
+                pattern="[\+]?[0-9\s\-\(\)]{7,18}"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="w-full bg-white/5 border border-[#1a1a1a] rounded-lg px-4 py-3 text-sm text-white placeholder:text-[#444] focus:outline-none focus:border-white/20 transition-colors"

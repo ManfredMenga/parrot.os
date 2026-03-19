@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-[#1a1a1a]' : ''}`}>
       <div className="w-full px-6 sm:px-12 md:px-20 h-12 flex justify-between items-center">
-        <a href="#" className="font-bold text-[15px] tracking-tight text-white flex items-center gap-2">
+        <a href="/" className="font-bold text-[15px] tracking-tight text-white flex items-center gap-2">
           <Image src="/images/logo-white.png" alt="Leitkraft" width={26} height={26} className="-mr-0.5" />
           Leitkraft
         </a>

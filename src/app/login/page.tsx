@@ -37,7 +37,7 @@ export default function LoginPage() {
               />
             </div>
             <button
-              type="button"
+              type="submit"
               className="btn-primary w-full mt-2"
             >
               Anmelden

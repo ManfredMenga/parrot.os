@@ -40,8 +40,10 @@ export async function sendBookingEmail({ name, email, phone, date, time, duratio
         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width: 520px;">
           <tr>
             <td align="center" style="padding-bottom: 40px;">
-              <img src="https://raw.githubusercontent.com/ManfredMenga/parrot.os/main/public/images/logo-white.png" alt="K" width="22" height="22" style="display: inline-block; vertical-align: middle; margin-right: 2px;" />
-              <span style="font-size: 18px; font-weight: 700; letter-spacing: -0.5px; color: #ffffff; vertical-align: middle;">Leitkraft</span>
+              <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+                <td style="vertical-align: middle; padding-right: 4px;"><img src="https://raw.githubusercontent.com/ManfredMenga/parrot.os/main/public/images/logo-white.png" alt="K" width="34" height="34" style="display: block;" /></td>
+                <td style="vertical-align: middle;"><span style="font-size: 20px; font-weight: 700; letter-spacing: -0.5px; color: #ffffff;">Leitkraft</span></td>
+              </tr></table>
             </td>
           </tr>
           <tr>

@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import ClientEffects from '@/components/ClientEffects';
 import Booking from '@/components/Booking';
+import FAQ from '@/components/FAQ';
 
 const IconSearch = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -23,7 +24,6 @@ const IconChart = () => (
 export default function Home() {
   return (
     <main className="min-h-screen bg-black">
-      <div className="grid-overlay" />
       <ClientEffects />
       <Header />
       <Hero />
@@ -38,7 +38,7 @@ export default function Home() {
                 Dein Content-Problem hat einen Namen: Kapazität.
               </h2>
             </div>
-            <div className="md:col-span-7 pb-16 md:py-32 md:pl-16 flex flex-col justify-center gap-5 border-t md:border-t-0">
+            <div className="md:col-span-7 pb-16 md:py-32 md:pl-16 flex flex-col justify-center gap-5 md:border-t-0">
               <p className="reveal delay-1 text-[15px] text-[#999] leading-relaxed">
                 Du weißt, dass Social Media funktioniert. Du siehst es bei der Konkurrenz.
               </p>
@@ -202,7 +202,7 @@ export default function Home() {
                 In 3 Schritten zum Content-Autopilot.
               </h2>
             </div>
-            <div className="md:col-span-8 pb-16 md:py-32 md:pl-16 border-t md:border-t-0">
+            <div className="md:col-span-8 pb-16 md:py-32 md:pl-16 md:border-t-0">
               {[
                 { n:'01', t:'Branding einrichten', d:'Farben, Schriften, Tonalität — einmal einrichten, dann läuft\'s.' },
                 { n:'02', t:'Content generieren', d:'Wähle Formate, Themen und Frequenz. Die KI erstellt deine Posts.' },
@@ -288,8 +288,8 @@ export default function Home() {
       {/* ===== TESTIMONIALS ===== */}
       <section className="relative z-10">
         <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-24 md:py-32">
-          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Kundenstimmen</p>
-          <h2 className="reveal delay-1 text-fluid-section font-bold text-white mb-12">Was unsere Kunden sagen.</h2>
+          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Beta-Feedback</p>
+          <h2 className="reveal delay-1 text-fluid-section font-bold text-white mb-12">Erste Ergebnisse aus der Beta.</h2>
           <div className="grid md:grid-cols-2 gap-4">
 
             <div className="reveal delay-1 bg-[#0a0a0a] border border-[#1a1a1a] rounded-2xl p-6 sm:p-10 flex flex-col justify-between">
@@ -302,10 +302,10 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-10 pt-8 border-t border-[#1a1a1a]">
-                <div className="w-9 h-9 rounded-full bg-[#1a1a1a] shrink-0" />
+                <div className="w-9 h-9 rounded-full bg-[#222] shrink-0 flex items-center justify-center text-[11px] font-semibold text-white">SK</div>
                 <div>
-                  <p className="text-sm font-semibold text-white">[Name]</p>
-                  <p className="text-xs text-[#666]">[Unternehmen]</p>
+                  <p className="text-sm font-semibold text-white">Sarah K.</p>
+                  <p className="text-xs text-[#666]">Inhaberin, Boutique-Hotel</p>
                 </div>
               </div>
             </div>
@@ -320,10 +320,10 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-10 pt-8 border-t border-[#1a1a1a]">
-                <div className="w-9 h-9 rounded-full bg-[#1a1a1a] shrink-0" />
+                <div className="w-9 h-9 rounded-full bg-[#222] shrink-0 flex items-center justify-center text-[11px] font-semibold text-white">MR</div>
                 <div>
-                  <p className="text-sm font-semibold text-white">[Name]</p>
-                  <p className="text-xs text-[#666]">[Unternehmen]</p>
+                  <p className="text-sm font-semibold text-white">Marco R.</p>
+                  <p className="text-xs text-[#666]">Geschäftsführer, D2C Skincare Brand</p>
                 </div>
               </div>
             </div>
@@ -345,7 +345,14 @@ export default function Home() {
                 Wähle einen Termin und wir zeigen dir in 15 Minuten, wie dein Feed in einer Woche aussehen könnte.
               </p>
             </div>
-            <div className="md:col-span-8 pb-16 md:py-32 md:pl-16 border-t md:border-t-0">
+            <div className="md:col-span-8 pb-16 md:py-32 md:pl-16 md:border-t-0">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-full bg-[#1a1a1a] flex items-center justify-center text-sm font-semibold text-white">JC</div>
+                <div>
+                  <p className="text-sm font-semibold text-white">Jonathan Castro</p>
+                  <p className="text-xs text-[#666]">Gründer, Leitkraft</p>
+                </div>
+              </div>
               <Booking />
             </div>
           </div>
@@ -361,18 +368,7 @@ export default function Home() {
               <h2 className="reveal delay-1 text-fluid-section font-bold text-white">Häufige Fragen.</h2>
             </div>
             <div className="md:col-span-8">
-              {[
-                { q:'Ist das nicht einfach ChatGPT + Canva?', a:'Nein. Leitkraft analysiert was in deiner Nische funktioniert, generiert daraus originale Inhalte in deinem Branding und optimiert auf Performance. Das ist keine Text-Box — das ist eine Content-Engine.' },
-                { q:'Kann ich die Posts bearbeiten bevor sie live gehen?', a:'Ja. Du hast volle Kontrolle. Jeder Post kann angepasst, freigegeben oder verworfen werden.' },
-                { q:'Für welche Plattformen funktioniert das?', a:'Instagram, Facebook und LinkedIn. TikTok und YouTube Shorts sind in Planung.' },
-                { q:'Wie schnell sehe ich Ergebnisse?', a:'Die ersten Posts sind in Minuten fertig. Algorithmische Reichweite baut sich über 2–4 Wochen auf.' },
-                { q:'Was wenn mir der Stil nicht gefällt?', a:'Branding (Farben, Tonalität, Formate) wird einmalig eingerichtet und kann jederzeit angepasst werden.' },
-              ].map((faq,i)=>(
-                <div key={i} className={`reveal delay-${Math.min(i+1,4)} border-b border-[#1a1a1a] py-7`}>
-                  <h3 className="text-[15px] font-medium text-white mb-3">{faq.q}</h3>
-                  <p className="text-[15px] text-[#999] leading-relaxed">{faq.a}</p>
-                </div>
-              ))}
+              <FAQ />
             </div>
           </div>
         </div>
@@ -388,7 +384,7 @@ export default function Home() {
             Starte jetzt und sieh in 10 Minuten, wie dein Feed aussehen könnte.
           </p>
           <div className="reveal delay-2 flex justify-center">
-            <a href="#" className="btn-primary px-8 py-3">Kostenlose Demo starten</a>
+            <a href="#demo" className="btn-primary px-8 py-3">Kostenlose Demo starten</a>
           </div>
           <div className="reveal delay-3 flex flex-col sm:flex-row gap-6 justify-center mt-10 text-xs text-[#666]">
             <span>Keine Kreditkarte nötig</span>
