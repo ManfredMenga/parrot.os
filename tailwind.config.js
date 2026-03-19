@@ -8,21 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'sans-serif'],
-        serif: ['var(--font-playfair)', 'serif'],
-      },
-      colors: {
-        brand: {
-          white: '#FFFFFF',
-          black: '#13151A',
-          muted: '#555555',
-          accent: '#C4A77D',
-        },
-      },
-      letterSpacing: {
-        tighter: '-.05em',
-        tight: '-.03em',
-        widest: '.15em',
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
     },
   },

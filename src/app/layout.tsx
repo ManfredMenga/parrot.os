@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Playfair_Display } from 'next/font/google';
-import CookieBanner from '@/components/CookieBanner';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
 const inter = Inter({
@@ -9,20 +8,18 @@ const inter = Inter({
   display: 'swap',
 });
 
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair',
-  style: ['normal', 'italic'],
-  display: 'swap',
-});
-
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#13151A',
+  themeColor: '#000000',
 };
 
 export const metadata: Metadata = {
+  colorScheme: 'dark',
+  other: {
+    'supported-color-schemes': 'dark',
+    'color-scheme': 'dark only',
+  },
   title: 'Leitkraft | 120 Posts pro Monat. 3 Plattformen. Null Burnout.',
   description:
     'KI-generierter Content der aussieht, als hätte dein Team eine Woche daran gearbeitet — fertig in Minuten. Für D2C-Brands, Gastro, Beauty & Coaches.',
@@ -38,10 +35,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${inter.variable} ${playfair.variable} scroll-smooth`} suppressHydrationWarning>
-      <body className="font-sans">
+    <html lang="de" className={`${inter.variable} scroll-smooth`} style={{colorScheme:'dark'}} suppressHydrationWarning>
+      <body className="font-sans bg-black text-white">
         {children}
-        <CookieBanner />
       </body>
     </html>
   );

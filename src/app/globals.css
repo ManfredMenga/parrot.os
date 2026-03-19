@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; color-scheme: dark only; }
 
 body {
   background-color: #000000;
@@ -13,6 +13,12 @@ body {
 }
 
 ::selection { background: #fff; color: #000; }
+
+input, textarea, select, button { color-scheme: dark; }
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0a0a0a inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
 
 ::-webkit-scrollbar { width: 2px; }
 ::-webkit-scrollbar-track { background: transparent; }
