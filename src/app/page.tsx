@@ -2,526 +2,398 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
 import ClientEffects from '@/components/ClientEffects';
+import Booking from '@/components/Booking';
+
+const IconSearch = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+  </svg>
+);
+const IconPen = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+  </svg>
+);
+const IconChart = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+  </svg>
+);
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-black">
+      <div className="grid-overlay" />
       <ClientEffects />
       <Header />
       <Hero />
 
-      {/* ===== SECTION 2: Problem ===== */}
-      <section id="problem" className="py-20 md:py-32 bg-white">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-12 gap-12 items-start">
-            <div className="md:col-span-7">
-              <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-                <span className="accent-dot mr-3" />
-                Das Problem
-              </p>
-              <h2 className="text-fluid-section font-bold tracking-tighter text-brand-black mb-8">
-                Dein Content-Problem hat einen Namen:{' '}
-                <span className="font-serif italic font-normal tracking-normal">Kapazität.</span>
+      {/* ===== PROBLEM ===== */}
+      <section className="relative z-10 border-t border-[#1a1a1a]">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20">
+          <div className="grid md:grid-cols-12 gap-0">
+            <div className="md:col-span-5 pt-16 pb-8 md:py-32 md:pr-16 md:border-r border-[#1a1a1a]">
+              <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Das Problem</p>
+              <h2 className="reveal delay-1 text-fluid-section font-bold text-white">
+                Dein Content-Problem hat einen Namen: Kapazität.
               </h2>
             </div>
-            <div className="md:col-span-5 md:mt-16">
-              <p className="reveal-right delay-1 text-lg md:text-xl font-medium text-brand-black leading-snug mb-6">
+            <div className="md:col-span-7 pb-16 md:py-32 md:pl-16 flex flex-col justify-center gap-5 border-t md:border-t-0">
+              <p className="reveal delay-1 text-[15px] text-[#999] leading-relaxed">
                 Du weißt, dass Social Media funktioniert. Du siehst es bei der Konkurrenz.
               </p>
-              <p className="reveal-right delay-2 text-sm text-brand-muted font-medium leading-relaxed mb-6">
+              <p className="reveal delay-2 text-[15px] text-[#999] leading-relaxed">
                 Aber zwischen Tagesgeschäft, Kundenprojekten und dem fünften Reel diese Woche bleibt Instagram liegen. Oder du postest halbherzig — und es performt halbherzig.
               </p>
-              <p className="reveal-right delay-3 text-sm text-brand-muted font-medium leading-relaxed mb-8">
+              <p className="reveal delay-3 text-[15px] text-[#999] leading-relaxed">
                 Agenturen kosten €5K–15K/Monat und liefern 12 Posts. Freelancer ghosten nach 3 Wochen. Canva-Templates sehen aus wie Canva-Templates.
               </p>
-              <p className="reveal-right delay-4 text-lg font-bold text-brand-accent">
+              <p className="reveal delay-4 text-[15px] text-white font-medium pt-2">
                 Was wäre, wenn du 10× mehr Content hättest — ohne 10× mehr Arbeit?
               </p>
-              <div className="line-draw-gold mt-8" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== SECTION 3: Lösung / Produkt-Intro ===== */}
-      <section id="features" className="py-20 md:py-32 bg-white border-t border-black/5">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            Die Lösung
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-brand-black mb-6">
-            Leitkraft macht aus deiner Marke eine{' '}
-            <span className="font-serif italic font-normal tracking-normal">Content-Maschine.</span>
-          </h2>
-          <p className="reveal delay-1 text-lg text-brand-muted font-medium max-w-3xl mb-16 md:mb-20">
-            Wir analysieren, was in deiner Nische viral geht. Dann generieren wir originale Posts — Texte, Bilder, Carousels — die zu deiner Marke passen. Kein Copy-Paste. Kein Repost. Dein Stil, deine Stimme, auf Autopilot.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
-            <div className="reveal-tilt delay-1 card-lift relative group">
-              <div className="sweep-line h-[1px] bg-brand-accent/10 mb-8 group-hover:bg-brand-accent/30 transition-colors duration-700" />
-              <span className="text-3xl block mb-4">🔍</span>
-              <h3 className="text-xl font-bold tracking-tight mb-4">Nischen-Intelligenz</h3>
-              <p className="text-sm text-brand-muted font-medium leading-relaxed">
-                Wir tracken die Top-Accounts in deiner Branche und erkennen, welche Inhalte gerade performen.
-              </p>
+      {/* ===== LÖSUNG / FEATURES ===== */}
+      <section id="features" className="relative z-10 border-t border-[#1a1a1a]">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-24 md:py-32">
+          <div className="grid md:grid-cols-12 gap-0 mb-12">
+            <div className="md:col-span-7 md:pr-16">
+              <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Lösung</p>
+              <h2 className="reveal delay-1 text-fluid-section font-bold text-white">
+                Leitkraft macht aus deiner Marke eine Content-Maschine.
+              </h2>
             </div>
-            <div className="reveal-tilt delay-2 card-lift relative group">
-              <div className="sweep-line h-[1px] bg-brand-accent/10 mb-8 group-hover:bg-brand-accent/30 transition-colors duration-700" />
-              <span className="text-3xl block mb-4">✍️</span>
-              <h3 className="text-xl font-bold tracking-tight mb-4">KI-Content-Studio</h3>
-              <p className="text-sm text-brand-muted font-medium leading-relaxed">
-                Texte, Bilder und Carousels — generiert in deinem Branding, mit deinen Farben und deiner Tonalität.
-              </p>
+            <div className="md:col-span-5 flex items-end mt-8 md:mt-0">
+              <div>
+                <p className="reveal delay-2 text-[15px] text-[#999] leading-relaxed mb-4">
+                  Wir analysieren, was in deiner Nische viral geht. Dann generieren wir originale Posts — Texte, Bilder, Carousels — die zu deiner Marke passen.
+                </p>
+                <p className="reveal delay-3 text-[15px] text-[#999] leading-relaxed">
+                  Kein Copy-Paste. Kein Repost. Dein Stil, deine Stimme, auf Autopilot.
+                </p>
+              </div>
             </div>
-            <div className="reveal-tilt delay-3 card-lift relative group">
-              <div className="sweep-line h-[1px] bg-brand-accent/10 mb-8 group-hover:bg-brand-accent/30 transition-colors duration-700" />
-              <span className="text-3xl block mb-4">📊</span>
-              <h3 className="text-xl font-bold tracking-tight mb-4">Performance-Daten</h3>
-              <p className="text-sm text-brand-muted font-medium leading-relaxed">
-                Jeder Post wird auf Basis von Engagement-Daten optimiert. Kein Raten, nur Ergebnisse.
-              </p>
-            </div>
+          </div>
+          <div className="bento-grid grid-cols-1 md:grid-cols-3">
+            {[
+              { icon: <IconSearch />, t:'Nischen-Intelligenz', d:'Wir tracken die Top-Accounts in deiner Branche und erkennen, welche Inhalte gerade performen.' },
+              { icon: <IconPen />, t:'KI-Content-Studio', d:'Texte, Bilder und Carousels — generiert in deinem Branding, mit deinen Farben und deiner Tonalität.' },
+              { icon: <IconChart />, t:'Performance-Daten', d:'Jeder Post wird auf Basis von Engagement-Daten optimiert. Kein Raten, nur Ergebnisse.' },
+            ].map((f, i) => (
+              <div key={i} className={`reveal delay-${i+1} p-6 sm:p-10`}>
+                <div className="text-[#666] mb-5">{f.icon}</div>
+                <h3 className="text-base font-semibold text-white mb-3">{f.t}</h3>
+                <p className="text-[15px] text-[#999] leading-relaxed">{f.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ===== SECTION 4: Social Proof / Zahlen ===== */}
-      <section className="py-20 md:py-32 bg-[#0a0a0c] text-white">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            In Zahlen
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-white mb-16 md:mb-20">
-            Zahlen, die für sich{' '}
-            <span className="font-serif italic font-normal tracking-normal text-brand-accent">sprechen.</span>
+      {/* ===== ZAHLEN ===== */}
+      <section className="relative z-10 border-t border-[#1a1a1a]">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-24 md:py-32">
+          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6 text-center">Zahlen</p>
+          <h2 className="reveal delay-1 text-fluid-section font-bold text-white mb-12 text-center">
+            Zahlen, die für sich sprechen.
           </h2>
-
-          <div className="line-draw h-[1px] bg-white/10 mb-12" />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-center md:text-left">
-            <div className="number-pop delay-1">
-              <p className="text-fluid-number font-bold tracking-tighter mb-2">
-                <span data-counter="120" data-suffix="+" className="counter-value">0</span>
-              </p>
-              <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">
-                Posts pro Monat<br />automatisch generiert
-              </p>
-            </div>
-            <div className="number-pop delay-2">
-              <p className="text-fluid-number font-bold tracking-tighter mb-2">
-                <span data-counter="3" className="counter-value">0</span>
-              </p>
-              <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">
-                Plattformen gleichzeitig<br />(IG, FB, LinkedIn)
-              </p>
-            </div>
-            <div className="number-pop delay-3">
-              <p className="text-fluid-number font-bold tracking-tighter mb-2">
-                <span data-counter="18" className="counter-value">0</span>
-              </p>
-              <p className="text-[10px] uppercase tracking-widest text-white/40 font-bold">
-                Professionelle<br />Template-Formate
-              </p>
-            </div>
+          <div className="bento-grid grid-cols-1 md:grid-cols-3">
+            {[
+              { v:'120', s:'+', label:'Posts pro Monat', sub:'automatisch generiert' },
+              { v:'3', s:'', label:'Plattformen gleichzeitig', sub:'Instagram, Facebook, LinkedIn' },
+              { v:'18', s:'', label:'Professionelle Template-Formate', sub:'datengetrieben designt' },
+            ].map((s, i) => (
+              <div key={i} className={`number-pop delay-${i+1} p-8 sm:p-12 md:p-16 text-center`}>
+                <p className="text-fluid-number font-bold text-white mb-3">
+                  <span data-counter={s.v} data-suffix={s.s} className="counter-value">0</span>
+                </p>
+                <p className="text-base font-medium text-white mb-1">{s.label}</p>
+                <p className="text-sm text-[#666]">{s.sub}</p>
+              </div>
+            ))}
           </div>
-
-          <p className="reveal delay-3 text-sm text-white/30 font-medium mt-12 text-center md:text-left">
+          <p className="reveal text-[15px] text-[#666] mt-8 text-center">
             Ein menschliches Team kostet dich €15.000/Monat für denselben Output.
           </p>
         </div>
       </section>
 
-      {/* ===== SECTION 5: Template-Showcase ===== */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            Dein Content
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-brand-black mb-16 md:mb-20">
-            Nicht irgendwelche Posts.{' '}
-            <span className="font-serif italic font-normal tracking-normal">Deine Posts.</span>
-          </h2>
+      {/* ===== TEMPLATE SHOWCASE ===== */}
+      <section className="relative z-10">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-24 md:py-32">
+          <div className="grid md:grid-cols-12 gap-0 mb-12">
+            <div className="md:col-span-6">
+              <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Templates</p>
+              <h2 className="reveal delay-1 text-fluid-section font-bold text-white">
+                Nicht irgendwelche Posts. Deine Posts.
+              </h2>
+            </div>
+            <div className="md:col-span-6 flex items-end">
+              <p className="reveal delay-2 text-[15px] text-[#999] leading-relaxed max-w-md">
+                Jedes Format ist datengetrieben designt — basierend auf den Inhalten, die in deiner Nische die höchste Reichweite erzielen.
+              </p>
+            </div>
+          </div>
+          <div className="bento-grid grid-cols-1 md:grid-cols-3">
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-            {[
-              { title: 'Quote / Testimonial Card', color: 'from-brand-accent/20 to-brand-accent/5' },
-              { title: 'Stats Card mit Metriken', color: 'from-blue-500/15 to-blue-500/5' },
-              { title: 'Carousel (Hook → Steps → CTA)', color: 'from-purple-500/15 to-purple-500/5' },
-              { title: 'Vergleich (Do vs. Don\'t)', color: 'from-green-500/15 to-green-500/5' },
-              { title: 'News-Style Post', color: 'from-orange-500/15 to-orange-500/5' },
-              { title: 'Video Thumbnail', color: 'from-rose-500/15 to-rose-500/5' },
-            ].map((template, i) => (
-              <div
-                key={i}
-                className={`reveal delay-${Math.min(i + 1, 5)} card-lift aspect-[4/5] rounded-2xl bg-gradient-to-br ${template.color} border border-black/5 flex items-end p-5 md:p-6 group hover:border-brand-accent/20 transition-colors duration-500`}
-              >
-                <div>
-                  <div className="w-8 h-8 rounded-lg bg-white/80 mb-3 flex items-center justify-center text-xs font-bold text-brand-black">
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                  <p className="text-xs md:text-sm font-bold text-brand-black/80">{template.title}</p>
+            <div className="reveal delay-1 p-6 sm:p-10">
+              <div className="text-[9px] text-[#666] uppercase tracking-widest mb-5 font-semibold">Quote / Testimonial</div>
+              <div className="bg-[#050505] border border-[#1a1a1a] rounded-xl p-5 aspect-[4/3] flex flex-col justify-between">
+                <p className="text-white text-sm font-medium leading-snug">"Das hat unsere Reichweite in 4 Wochen verdreifacht."</p>
+                <div className="flex items-center gap-2 pt-4 border-t border-[#1a1a1a]">
+                  <div className="w-6 h-6 rounded-full bg-[#1a1a1a]" />
+                  <span className="text-[10px] text-[#666]">@markenbrand</span>
                 </div>
               </div>
-            ))}
-          </div>
-
-          <p className="reveal delay-3 text-sm text-brand-muted font-medium mt-10 text-center max-w-2xl mx-auto">
-            Jedes Format ist datengetrieben designt — basierend auf den Inhalten, die in deiner Nische die höchste Reichweite erzielen.
-          </p>
-        </div>
-      </section>
-
-      {/* ===== SECTION 6: Wie es funktioniert ===== */}
-      <section id="how-it-works" className="py-20 md:py-32 bg-[#0a0a0c] text-white">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            So funktioniert's
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-white mb-16 md:mb-20">
-            In 3 Schritten zum{' '}
-            <span className="font-serif italic font-normal tracking-normal text-brand-accent">Content-Autopilot.</span>
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
-            <div className="reveal-tilt delay-1 card-lift relative group">
-              <div className="sweep-line h-[1px] bg-brand-accent/10 mb-8 group-hover:bg-brand-accent/30 transition-colors duration-700" />
-              <span className="text-[9px] font-bold text-brand-accent/50 block mb-4">01</span>
-              <h3 className="text-xl font-bold tracking-tight mb-4 text-white">Branding einrichten</h3>
-              <p className="text-sm text-white/40 font-medium leading-relaxed">
-                Farben, Schriften, Tonalität — einmal einrichten, dann läuft's.
-              </p>
             </div>
-            <div className="reveal-tilt delay-2 card-lift relative group">
-              <div className="sweep-line h-[1px] bg-brand-accent/10 mb-8 group-hover:bg-brand-accent/30 transition-colors duration-700" />
-              <span className="text-[9px] font-bold text-brand-accent/50 block mb-4">02</span>
-              <h3 className="text-xl font-bold tracking-tight mb-4 text-white">Content generieren</h3>
-              <p className="text-sm text-white/40 font-medium leading-relaxed">
-                Wähle Formate, Themen und Frequenz. Die KI erstellt deine Posts.
-              </p>
+
+            <div className="reveal delay-2 p-6 sm:p-10">
+              <div className="text-[9px] text-[#666] uppercase tracking-widest mb-5 font-semibold">Stats Card</div>
+              <div className="bg-[#050505] border border-[#1a1a1a] rounded-xl p-5 aspect-[4/3] flex flex-col justify-between">
+                <div className="text-3xl font-bold text-white">120+</div>
+                <div>
+                  <div className="text-xs text-[#666] mb-3">Posts pro Monat</div>
+                  <div className="space-y-2">
+                    {[['IG',80],['FB',65],['LI',50]].map(([p,w],i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <span className="text-[9px] text-[#666] w-4">{p}</span>
+                        <div className="flex-1 h-px bg-[#1a1a1a] rounded-full">
+                          <div className="h-px bg-[#444] rounded-full" style={{width:`${w}%`}} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="reveal-tilt delay-3 card-lift relative group">
-              <div className="sweep-line h-[1px] bg-brand-accent/10 mb-8 group-hover:bg-brand-accent/30 transition-colors duration-700" />
-              <span className="text-[9px] font-bold text-brand-accent/50 block mb-4">03</span>
-              <h3 className="text-xl font-bold tracking-tight mb-4 text-white">Freigeben & posten</h3>
-              <p className="text-sm text-white/40 font-medium leading-relaxed">
-                Prüfe, passe an, veröffentliche — oder lass es automatisch laufen.
-              </p>
+
+            <div className="reveal delay-3 p-6 sm:p-10">
+              <div className="text-[9px] text-[#666] uppercase tracking-widest mb-5 font-semibold">Carousel</div>
+              <div className="bg-[#050505] border border-[#1a1a1a] rounded-xl p-5 aspect-[4/3] flex flex-col justify-between">
+                <div>
+                  <div className="text-[9px] text-[#666] uppercase tracking-widest mb-2">Hook</div>
+                  <p className="text-white text-sm font-medium leading-snug">3 Fehler die dein Instagram sabotieren</p>
+                </div>
+                <div>
+                  <div className="text-[9px] text-[#666] mb-2">Slide 1 / 5</div>
+                  <div className="flex gap-1">
+                    {[0,1,2,3,4].map(i => (
+                      <div key={i} className={`h-px flex-1 rounded-full ${i===0?'bg-white':'bg-[#222]'}`} />
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* ===== SECTION 7: Vergleich ===== */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            Vergleich
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-brand-black mb-16 md:mb-20">
-            Warum Leitkraft statt{' '}
-            <span className="font-serif italic font-normal tracking-normal">Agentur?</span>
-          </h2>
+      {/* ===== HOW IT WORKS ===== */}
+      <section className="relative z-10 border-t border-[#1a1a1a]">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20">
+          <div className="grid md:grid-cols-12 gap-0">
+            <div className="md:col-span-4 pt-16 pb-8 md:py-32 md:pr-16 md:border-r border-[#1a1a1a]">
+              <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Prozess</p>
+              <h2 className="reveal delay-1 text-fluid-section font-bold text-white">
+                In 3 Schritten zum Content-Autopilot.
+              </h2>
+            </div>
+            <div className="md:col-span-8 pb-16 md:py-32 md:pl-16 border-t md:border-t-0">
+              {[
+                { n:'01', t:'Branding einrichten', d:'Farben, Schriften, Tonalität — einmal einrichten, dann läuft\'s.' },
+                { n:'02', t:'Content generieren', d:'Wähle Formate, Themen und Frequenz. Die KI erstellt deine Posts.' },
+                { n:'03', t:'Freigeben & posten', d:'Prüfe, passe an, veröffentliche — oder lass es automatisch laufen.' },
+              ].map((s, i) => (
+                <div key={i} className={`reveal delay-${i+1} flex items-start gap-8 py-8 ${i > 0 ? 'border-t border-[#1a1a1a]' : ''}`}>
+                  <span className="text-[11px] font-bold text-[#555] tracking-widest mt-1 w-8 shrink-0">{s.n}</span>
+                  <div>
+                    <h3 className="text-base font-semibold text-white mb-2">{s.t}</h3>
+                    <p className="text-[15px] text-[#999] leading-relaxed">{s.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className="reveal overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b-2 border-brand-black/10">
-                  <th className="text-left py-4 pr-4 font-bold text-brand-muted text-xs uppercase tracking-widest"></th>
-                  <th className="text-left py-4 px-4 font-bold text-brand-muted text-xs uppercase tracking-widest">Agentur</th>
-                  <th className="text-left py-4 px-4 font-bold text-brand-muted text-xs uppercase tracking-widest">Freelancer</th>
-                  <th className="text-left py-4 px-4 font-bold text-brand-accent text-xs uppercase tracking-widest">Leitkraft</th>
-                </tr>
-              </thead>
-              <tbody className="text-brand-black">
-                {[
-                  ['Posts/Monat', '8–15', '10–20', '120+'],
-                  ['Kosten', '€5K–15K', '€2K–5K', 'Ab €X/Monat'],
-                  ['Turnaround', '5–10 Tage', '3–7 Tage', 'Minuten'],
-                  ['Plattformen', '1–2', '1', '3+'],
-                  ['Branding-Konsistenz', 'Variiert', 'Variiert', '100% on-brand'],
-                  ['Skalierbar', 'Nein', 'Nein', 'Ja'],
-                ].map(([label, agentur, freelancer, leitkraft], i) => (
-                  <tr key={i} className="border-b border-brand-black/5 hover:bg-brand-accent/5 transition-colors">
-                    <td className="py-4 pr-4 font-bold text-sm">{label}</td>
-                    <td className="py-4 px-4 text-brand-muted">{agentur}</td>
-                    <td className="py-4 px-4 text-brand-muted">{freelancer}</td>
-                    <td className="py-4 px-4 font-bold text-brand-accent">{leitkraft}</td>
+      {/* ===== VERGLEICH ===== */}
+      <section className="relative z-10 border-t border-[#1a1a1a]">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-24 md:py-32">
+          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Vergleich</p>
+          <h2 className="reveal delay-1 text-fluid-section font-bold text-white mb-12">
+            Warum Leitkraft statt Agentur?
+          </h2>
+          <div className="reveal delay-2 bento-grid overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-[#1a1a1a]">
+                    <th className="text-left py-4 px-4 sm:py-5 sm:px-6 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#555] w-48"></th>
+                    <th className="text-left py-4 px-4 sm:py-5 sm:px-6 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666]">Agentur</th>
+                    <th className="text-left py-4 px-4 sm:py-5 sm:px-6 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666]">Freelancer</th>
+                    <th className="text-left py-4 px-4 sm:py-5 sm:px-6 text-[11px] font-semibold uppercase tracking-[0.15em] text-white bg-white/[0.02]">Leitkraft</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {[
+                    ['Posts/Monat','8–15','10–20','120+'],
+                    ['Kosten','€5K–15K','€2K–5K','Ab €X/Monat'],
+                    ['Turnaround','5–10 Tage','3–7 Tage','Minuten'],
+                    ['Plattformen','1–2','1','3+'],
+                    ['Branding-Konsistenz','Variiert','Variiert','100% on-brand'],
+                    ['Skalierbar','Nein','Nein','Ja'],
+                  ].map(([l,a,b,lk],i) => (
+                    <tr key={i} className="border-b border-[#1a1a1a] last:border-0 hover:bg-white/[0.015] transition-colors">
+                      <td className="py-4 px-4 sm:py-5 sm:px-6 text-sm font-medium text-white">{l}</td>
+                      <td className="py-4 px-4 sm:py-5 sm:px-6 text-sm text-[#666]">{a}</td>
+                      <td className="py-4 px-4 sm:py-5 sm:px-6 text-sm text-[#666]">{b}</td>
+                      <td className="py-4 px-4 sm:py-5 sm:px-6 text-sm font-medium text-white bg-white/[0.02]">{lk}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ===== SECTION 8: Use Cases / Nischen ===== */}
-      <section className="py-20 md:py-32 bg-[#0a0a0c] text-white overflow-hidden">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            Use Cases
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-white mb-16 md:mb-20">
-            Für Marken, die{' '}
-            <span className="font-serif italic font-normal tracking-normal text-brand-accent">wachsen wollen.</span>
+      {/* ===== USE CASES ===== */}
+      <section id="branchen" className="relative z-10">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-24 md:py-32">
+          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Branchen</p>
+          <h2 className="reveal delay-1 text-fluid-section font-bold text-white mb-12">
+            Für Marken, die wachsen wollen.
           </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="bento-grid grid-cols-1 md:grid-cols-2">
             {[
-              {
-                emoji: '🍷',
-                title: 'Gastro & Hospitality',
-                desc: 'Tagesgerichte, Events, Bewertungen, Behind-the-Scenes — automatisch in Posts verwandelt, die Gäste bringen.',
-              },
-              {
-                emoji: '💇',
-                title: 'Beauty & Wellness',
-                desc: 'Vorher/Nachher, Tipps, Testimonials, Buchungs-CTAs — dein Feed sieht aus wie eine Premium-Marke.',
-              },
-              {
-                emoji: '🛍️',
-                title: 'D2C & E-Commerce',
-                desc: 'Produkt-Launches, Social Proof, UGC-Style Posts, Sale-Ankündigungen — Content der konvertiert.',
-              },
-              {
-                emoji: '💼',
-                title: 'Coaches & Berater',
-                desc: 'Thought Leadership, Frameworks, Kundenstimmen — positioniere dich als Experte ohne stundenlang zu posten.',
-              },
-            ].map((useCase, i) => (
-              <div
-                key={i}
-                className={`reveal delay-${i + 1} group relative rounded-2xl bg-white/[0.03] border border-white/5 p-6 card-lift hover:border-brand-accent/20 transition-colors duration-500`}
-              >
-                <span className="text-3xl block mb-4">{useCase.emoji}</span>
-                <h3 className="text-base font-bold tracking-tight mb-3 text-white">{useCase.title}</h3>
-                <p className="text-sm text-white/40 leading-relaxed">{useCase.desc}</p>
+              { tag:'Gastro & Hospitality', d:'Tagesgerichte, Events, Bewertungen, Behind-the-Scenes — automatisch in Posts verwandelt, die Gäste bringen.' },
+              { tag:'Beauty & Wellness', d:'Vorher/Nachher, Tipps, Testimonials, Buchungs-CTAs — dein Feed sieht aus wie eine Premium-Marke.' },
+              { tag:'D2C & E-Commerce', d:'Produkt-Launches, Social Proof, UGC-Style Posts, Sale-Ankündigungen — Content der konvertiert.' },
+              { tag:'Coaches & Berater', d:'Thought Leadership, Frameworks, Kundenstimmen — positioniere dich als Experte ohne stundenlang zu posten.' },
+            ].map((uc, i) => (
+              <div key={i} className={`reveal delay-${i+1} p-6 sm:p-10`}>
+                <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#666] mb-4">{uc.tag}</p>
+                <p className="text-[15px] text-[#999] leading-relaxed">{uc.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== SECTION 9: Testimonials ===== */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            Kundenstimmen
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-brand-black mb-16 md:mb-20">
-            Was unsere Kunden{' '}
-            <span className="font-serif italic font-normal tracking-normal">sagen.</span>
-          </h2>
+      {/* ===== TESTIMONIALS ===== */}
+      <section className="relative z-10">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-24 md:py-32">
+          <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Kundenstimmen</p>
+          <h2 className="reveal delay-1 text-fluid-section font-bold text-white mb-12">Was unsere Kunden sagen.</h2>
+          <div className="grid md:grid-cols-2 gap-4">
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="reveal delay-1 card-lift p-8 md:p-10 rounded-2xl bg-[#fafafa] border border-black/5">
-              <p className="text-lg md:text-xl font-medium text-brand-black leading-relaxed mb-8">
-                "Wir haben vorher €8.000/Monat für eine Agentur bezahlt und 12 Posts bekommen. Mit Leitkraft bekommen wir 10× mehr Content für einen Bruchteil der Kosten."
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-sm font-bold text-brand-accent">?</div>
-                <div>
-                  <p className="font-bold text-sm text-brand-black">[Name]</p>
-                  <p className="text-xs text-brand-muted">[Unternehmen]</p>
+            <div className="reveal delay-1 bg-[#0a0a0a] border border-[#1a1a1a] rounded-2xl p-6 sm:p-10 flex flex-col justify-between">
+              <div>
+                <div className="flex gap-1 mb-8">
+                  {[0,1,2,3,4].map(i => <span key={i} className="text-white text-sm">★</span>)}
                 </div>
-              </div>
-            </div>
-            <div className="reveal delay-2 card-lift p-8 md:p-10 rounded-2xl bg-[#fafafa] border border-black/5">
-              <p className="text-lg md:text-xl font-medium text-brand-black leading-relaxed mb-8">
-                "Endlich sieht unser Instagram aus wie eine echte Marke. Und ich muss nicht mehr jeden Abend Canva aufmachen."
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-full bg-brand-accent/20 flex items-center justify-center text-sm font-bold text-brand-accent">?</div>
-                <div>
-                  <p className="font-bold text-sm text-brand-black">[Name]</p>
-                  <p className="text-xs text-brand-muted">[Unternehmen]</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <p className="text-xs text-brand-muted text-center mt-8 italic">
-            Echte Testimonials nach Beta-Phase
-          </p>
-        </div>
-      </section>
-
-      {/* ===== SECTION 10: Pricing ===== */}
-      <section id="pricing" className="py-20 md:py-32 bg-[#0a0a0c] text-white">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            Pricing
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-white mb-6">
-            Investiere in Content,{' '}
-            <span className="font-serif italic font-normal tracking-normal text-brand-accent">nicht in Overhead.</span>
-          </h2>
-          <p className="reveal delay-1 text-lg text-white/40 font-medium max-w-2xl mb-16 md:mb-20">
-            Wähle den Plan, der zu deinem Wachstum passt.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                name: 'Starter',
-                price: '€X',
-                posts: '40',
-                platforms: '1',
-                features: ['Carousels', 'Basic Branding'],
-                missing: ['AI-Bilder', 'Reels'],
-                highlighted: false,
-              },
-              {
-                name: 'Growth',
-                price: '€X',
-                posts: '80',
-                platforms: '2',
-                features: ['Carousels', 'AI-Bilder', 'Full Branding'],
-                missing: ['Reels'],
-                highlighted: true,
-              },
-              {
-                name: 'Scale',
-                price: '€X',
-                posts: '120+',
-                platforms: '3+',
-                features: ['Carousels', 'AI-Bilder', 'Reels', 'Full Branding + Varianten'],
-                missing: [],
-                highlighted: false,
-              },
-            ].map((plan, i) => (
-              <div
-                key={i}
-                className={`reveal delay-${i + 1} card-lift relative rounded-2xl p-8 ${
-                  plan.highlighted
-                    ? 'bg-brand-accent/10 border-2 border-brand-accent/30'
-                    : 'bg-white/[0.03] border border-white/5'
-                }`}
-              >
-                {plan.highlighted && (
-                  <span className="absolute -top-3 left-6 bg-brand-accent text-brand-black text-[10px] font-bold uppercase tracking-widest px-4 py-1 rounded-full">
-                    Beliebt
-                  </span>
-                )}
-                <h3 className="text-xl font-bold tracking-tight mb-2">{plan.name}</h3>
-                <p className="text-fluid-number font-bold tracking-tighter text-brand-accent mb-1">
-                  {plan.price}
+                <p className="text-lg text-white font-medium leading-relaxed">
+                  &ldquo;Wir haben vorher €8.000/Monat für eine Agentur bezahlt und 12 Posts bekommen. Mit Leitkraft bekommen wir 10× mehr Content für einen Bruchteil der Kosten.&rdquo;
                 </p>
-                <p className="text-xs text-white/40 mb-8">pro Monat</p>
-
-                <div className="space-y-3 mb-8">
-                  <div className="flex items-center gap-3 text-sm">
-                    <span className="text-brand-accent font-bold">{plan.posts}</span>
-                    <span className="text-white/60">Posts/Monat</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <span className="text-brand-accent font-bold">{plan.platforms}</span>
-                    <span className="text-white/60">Plattformen</span>
-                  </div>
-                </div>
-
-                <div className="border-t border-white/5 pt-6 space-y-2">
-                  {plan.features.map((f, j) => (
-                    <div key={j} className="flex items-center gap-2 text-sm text-white/60">
-                      <span className="text-green-400 text-xs">✓</span>
-                      {f}
-                    </div>
-                  ))}
-                  {plan.missing.map((f, j) => (
-                    <div key={j} className="flex items-center gap-2 text-sm text-white/20">
-                      <span className="text-white/20 text-xs">✗</span>
-                      {f}
-                    </div>
-                  ))}
-                </div>
-
-                <a
-                  href="#cta"
-                  className={`block text-center mt-8 btn-pill w-full ${
-                    plan.highlighted ? 'btn-accent' : 'border border-white/10 text-white hover:bg-white/5 transition-colors'
-                  }`}
-                >
-                  Plan wählen
-                </a>
               </div>
-            ))}
+              <div className="flex items-center gap-3 mt-10 pt-8 border-t border-[#1a1a1a]">
+                <div className="w-9 h-9 rounded-full bg-[#1a1a1a] shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold text-white">[Name]</p>
+                  <p className="text-xs text-[#666]">[Unternehmen]</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="reveal delay-2 bg-[#0a0a0a] border border-[#1a1a1a] rounded-2xl p-6 sm:p-10 flex flex-col justify-between">
+              <div>
+                <div className="flex gap-1 mb-8">
+                  {[0,1,2,3,4].map(i => <span key={i} className="text-white text-sm">★</span>)}
+                </div>
+                <p className="text-lg text-white font-medium leading-relaxed">
+                  &ldquo;Endlich sieht unser Instagram aus wie eine echte Marke. Und ich muss nicht mehr jeden Abend Canva aufmachen.&rdquo;
+                </p>
+              </div>
+              <div className="flex items-center gap-3 mt-10 pt-8 border-t border-[#1a1a1a]">
+                <div className="w-9 h-9 rounded-full bg-[#1a1a1a] shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold text-white">[Name]</p>
+                  <p className="text-xs text-[#666]">[Unternehmen]</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ===== SECTION 11: FAQ ===== */}
-      <section id="faq" className="py-20 md:py-32 bg-white">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            FAQ
-          </p>
-          <h2 className="text-fluid-section font-bold tracking-tighter text-brand-black mb-16 md:mb-20">
-            Häufige{' '}
-            <span className="font-serif italic font-normal tracking-normal">Fragen.</span>
+      {/* ===== BOOKING ===== */}
+      <section id="demo" className="relative z-10 border-t border-[#1a1a1a]">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20">
+          <div className="grid md:grid-cols-12 gap-0">
+            <div className="md:col-span-4 pt-16 pb-8 md:py-32 md:pr-16 md:border-r border-[#1a1a1a]">
+              <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Demo buchen</p>
+              <h2 className="reveal delay-1 text-fluid-section font-bold text-white mb-6">
+                Sieh Leitkraft live in Aktion.
+              </h2>
+              <p className="reveal delay-2 text-[15px] text-[#999] leading-relaxed">
+                Wähle einen Termin und wir zeigen dir in 15 Minuten, wie dein Feed in einer Woche aussehen könnte.
+              </p>
+            </div>
+            <div className="md:col-span-8 pb-16 md:py-32 md:pl-16 border-t md:border-t-0">
+              <Booking />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ ===== */}
+      <section id="faq" className="relative z-10 border-t border-[#1a1a1a]">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-24 md:py-32">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16 items-start">
+            <div className="md:col-span-4">
+              <p className="reveal text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">FAQ</p>
+              <h2 className="reveal delay-1 text-fluid-section font-bold text-white">Häufige Fragen.</h2>
+            </div>
+            <div className="md:col-span-8">
+              {[
+                { q:'Ist das nicht einfach ChatGPT + Canva?', a:'Nein. Leitkraft analysiert was in deiner Nische funktioniert, generiert daraus originale Inhalte in deinem Branding und optimiert auf Performance. Das ist keine Text-Box — das ist eine Content-Engine.' },
+                { q:'Kann ich die Posts bearbeiten bevor sie live gehen?', a:'Ja. Du hast volle Kontrolle. Jeder Post kann angepasst, freigegeben oder verworfen werden.' },
+                { q:'Für welche Plattformen funktioniert das?', a:'Instagram, Facebook und LinkedIn. TikTok und YouTube Shorts sind in Planung.' },
+                { q:'Wie schnell sehe ich Ergebnisse?', a:'Die ersten Posts sind in Minuten fertig. Algorithmische Reichweite baut sich über 2–4 Wochen auf.' },
+                { q:'Was wenn mir der Stil nicht gefällt?', a:'Branding (Farben, Tonalität, Formate) wird einmalig eingerichtet und kann jederzeit angepasst werden.' },
+              ].map((faq,i)=>(
+                <div key={i} className={`reveal delay-${Math.min(i+1,4)} border-b border-[#1a1a1a] py-7`}>
+                  <h3 className="text-[15px] font-medium text-white mb-3">{faq.q}</h3>
+                  <p className="text-[15px] text-[#999] leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FINAL CTA ===== */}
+      <section id="cta" className="relative z-10 border-t border-[#1a1a1a]">
+        <div className="max-w-[88rem] mx-auto px-6 sm:px-12 md:px-20 py-28 md:py-40 text-center">
+          <h2 className="reveal text-fluid-section font-bold text-white mb-4">
+            Dein Instagram verdient besseren Content.
           </h2>
-
-          <div className="max-w-3xl space-y-0">
-            {[
-              {
-                q: 'Ist das nicht einfach ChatGPT + Canva?',
-                a: 'Nein. Leitkraft analysiert was in deiner Nische funktioniert, generiert daraus originale Inhalte in deinem Branding und optimiert auf Performance. Das ist keine Text-Box — das ist eine Content-Engine.',
-              },
-              {
-                q: 'Kann ich die Posts bearbeiten bevor sie live gehen?',
-                a: 'Ja. Du hast volle Kontrolle. Jeder Post kann angepasst, freigegeben oder verworfen werden.',
-              },
-              {
-                q: 'Für welche Plattformen funktioniert das?',
-                a: 'Instagram, Facebook und LinkedIn. TikTok und YouTube Shorts sind in Planung.',
-              },
-              {
-                q: 'Wie schnell sehe ich Ergebnisse?',
-                a: 'Die ersten Posts sind in Minuten fertig. Algorithmische Reichweite baut sich über 2–4 Wochen auf.',
-              },
-              {
-                q: 'Was wenn mir der Stil nicht gefällt?',
-                a: 'Branding (Farben, Tonalität, Formate) wird einmalig eingerichtet und kann jederzeit angepasst werden.',
-              },
-            ].map((faq, i) => (
-              <div key={i} className={`reveal delay-${Math.min(i + 1, 5)} border-b border-brand-black/5 py-8`}>
-                <h3 className="text-lg font-bold tracking-tight text-brand-black mb-3">{faq.q}</h3>
-                <p className="text-sm text-brand-muted font-medium leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
+          <p className="reveal delay-1 text-[15px] text-[#999] mb-12 max-w-md mx-auto leading-relaxed">
+            Starte jetzt und sieh in 10 Minuten, wie dein Feed aussehen könnte.
+          </p>
+          <div className="reveal delay-2 flex justify-center">
+            <a href="#" className="btn-primary px-8 py-3">Kostenlose Demo starten</a>
           </div>
-        </div>
-      </section>
-
-      {/* ===== SECTION 12: Final CTA ===== */}
-      <section id="cta" className="py-20 md:py-32 bg-[#0a0a0c] text-white text-center">
-        <div className="max-w-[85rem] mx-auto px-6 md:px-12">
-          <div className="max-w-2xl mx-auto">
-            <h2 className="reveal text-fluid-section font-bold tracking-tighter text-white mb-4">
-              Dein Instagram verdient{' '}
-              <span className="font-serif italic font-normal tracking-normal text-brand-accent">besseren Content.</span>
-            </h2>
-            <p className="reveal delay-1 text-lg text-white/50 font-medium mb-10">
-              Starte jetzt und sieh in 10 Minuten, wie dein Feed aussehen könnte.
-            </p>
-            <div className="reveal delay-2">
-              <a href="#" className="btn-pill btn-accent btn-magnetic text-lg px-10 py-5">
-                Kostenlose Demo starten
-              </a>
-            </div>
-            <div className="reveal delay-3 flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center mt-10 text-xs text-white/30 font-medium">
-              <span>✓ Keine Kreditkarte nötig</span>
-              <span>✓ In 2 Minuten eingerichtet</span>
-              <span>✓ Jederzeit kündbar</span>
-            </div>
+          <div className="reveal delay-3 flex flex-col sm:flex-row gap-6 justify-center mt-10 text-xs text-[#666]">
+            <span>Keine Kreditkarte nötig</span>
+            <span>In 2 Minuten eingerichtet</span>
+            <span>Jederzeit kündbar</span>
           </div>
         </div>
       </section>

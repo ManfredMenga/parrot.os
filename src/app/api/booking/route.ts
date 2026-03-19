@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     const calendar = google.calendar({ version: 'v3', auth });
 
     const event = {
-      summary: `LeitSalon: Termin mit ${name}`,
+      summary: `Leitkraft: Demo mit ${name}`,
       description: `Telefon: ${phone}\nE-Mail: ${email}\nDauer: ${duration} Minuten`,
       start: {
         dateTime: startDateTime.toISOString(),

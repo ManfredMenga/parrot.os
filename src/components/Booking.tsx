@@ -118,16 +118,16 @@ export default function Booking() {
   if (submitted) {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 rounded-full bg-brand-accent/20 flex items-center justify-center mx-auto mb-6">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-brand-accent">
+        <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-white">
             <polyline points="20 6 9 17 4 12" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold tracking-tight mb-3">Termin angefragt</h3>
-        <p className="text-sm text-white/50 max-w-md mx-auto mb-2">
+        <h3 className="text-2xl font-bold tracking-tight mb-3 text-white">Termin angefragt</h3>
+        <p className="text-sm text-[#888] max-w-md mx-auto mb-2">
           {duration} Minuten am {formatDate(dates[selectedDate])} um {selectedTime} Uhr
         </p>
-        <p className="text-xs text-white/30">
+        <p className="text-xs text-[#555]">
           Wir melden uns innerhalb von 24 Stunden bei dir.
         </p>
       </div>
@@ -148,16 +148,16 @@ export default function Booking() {
               }}
               className={`w-8 h-8 rounded-full text-xs font-bold transition-all duration-300 ${
                 step === s
-                  ? 'bg-brand-accent text-brand-black'
+                  ? 'bg-white text-black'
                   : step > s
-                    ? 'bg-brand-accent/20 text-brand-accent'
-                    : 'bg-white/5 text-white/30'
+                    ? 'bg-white/20 text-white'
+                    : 'bg-white/5 text-[#555]'
               }`}
             >
               {step > s ? '✓' : s}
             </button>
             {s < 3 && (
-              <div className={`w-8 h-[1px] transition-colors duration-300 ${step > s ? 'bg-brand-accent/30' : 'bg-white/10'}`} />
+              <div className={`w-8 h-[1px] transition-colors duration-300 ${step > s ? 'bg-white/20' : 'bg-[#1a1a1a]'}`} />
             )}
           </div>
         ))}
@@ -166,32 +166,32 @@ export default function Booking() {
       {/* Step 1: Duration */}
       {step === 1 && (
         <div>
-          <h3 className="text-lg font-bold tracking-tight mb-1">Gesprächsart wählen</h3>
-          <p className="text-xs text-white/40 mb-6">Was passt am besten zu dir?</p>
+          <h3 className="text-lg font-bold tracking-tight mb-1 text-white">Gesprächsart wählen</h3>
+          <p className="text-xs text-[#666] mb-6">Was passt am besten zu dir?</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <button
               onClick={() => { setDuration(15); setStep(2); }}
               className={`text-left p-5 rounded-xl border transition-all duration-300 ${
                 duration === 15
-                  ? 'border-brand-accent/40 bg-brand-accent/5'
-                  : 'border-white/10 hover:border-white/20 bg-white/[0.02]'
+                  ? 'border-white/40 bg-white/[0.05]'
+                  : 'border-[#1a1a1a] hover:border-white/20 bg-white/[0.02]'
               }`}
             >
-              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent/50 block mb-2">15 Min</span>
-              <span className="text-base font-bold block mb-1">Kostenloses Erstgespräch</span>
-              <span className="text-xs text-white/40">Kurzes Kennenlernen & Potenzial-Check</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#888] block mb-2">15 Min</span>
+              <span className="text-base font-bold block mb-1 text-white">Kostenloses Erstgespräch</span>
+              <span className="text-xs text-[#666]">Kurzes Kennenlernen & Potenzial-Check</span>
             </button>
             <button
               onClick={() => { setDuration(30); setStep(2); }}
               className={`text-left p-5 rounded-xl border transition-all duration-300 ${
                 duration === 30
-                  ? 'border-brand-accent/40 bg-brand-accent/5'
-                  : 'border-white/10 hover:border-white/20 bg-white/[0.02]'
+                  ? 'border-white/40 bg-white/[0.05]'
+                  : 'border-[#1a1a1a] hover:border-white/20 bg-white/[0.02]'
               }`}
             >
-              <span className="text-[10px] font-bold uppercase tracking-widest text-brand-accent/50 block mb-2">30 Min</span>
-              <span className="text-base font-bold block mb-1">Strategie-Gespräch</span>
-              <span className="text-xs text-white/40">Tiefgehende Analyse & konkreter Fahrplan</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-[#888] block mb-2">30 Min</span>
+              <span className="text-base font-bold block mb-1 text-white">Strategie-Gespräch</span>
+              <span className="text-xs text-[#666]">Tiefgehende Analyse & konkreter Fahrplan</span>
             </button>
           </div>
         </div>
@@ -200,19 +200,19 @@ export default function Booking() {
       {/* Step 2: Date & Time */}
       {step === 2 && (
         <div>
-          <h3 className="text-lg font-bold tracking-tight mb-1">Wann passt es dir?</h3>
-          <p className="text-xs text-white/40 mb-6">{duration}-Minuten-Gespräch</p>
+          <h3 className="text-lg font-bold tracking-tight mb-1 text-white">Wann passt es dir?</h3>
+          <p className="text-xs text-[#666] mb-6">{duration}-Minuten-Gespräch</p>
 
           {/* Date Selection */}
-          <div className="flex gap-2 mb-6 overflow-x-auto pb-2 scrollbar-hide">
+          <div className="flex gap-2 mb-6 overflow-x-auto pb-2" style={{scrollbarWidth:'none'}}>
             {dates.map((date, i) => (
               <button
                 key={i}
                 onClick={() => setSelectedDate(i)}
                 className={`flex-shrink-0 px-4 py-3 rounded-lg text-center transition-all duration-300 ${
                   selectedDate === i
-                    ? 'bg-brand-accent text-brand-black'
-                    : 'bg-white/5 hover:bg-white/10 text-white/70'
+                    ? 'bg-white text-black'
+                    : 'bg-white/5 hover:bg-white/10 text-[#888]'
                 }`}
               >
                 <span className="text-[10px] font-bold uppercase block">{['So','Mo','Di','Mi','Do','Fr','Sa'][date.getDay()]}</span>
@@ -224,13 +224,13 @@ export default function Booking() {
           {/* Time Selection */}
           {loadingSlots ? (
             <div className="text-center py-8">
-              <div className="w-6 h-6 border-2 border-brand-accent/30 border-t-brand-accent rounded-full animate-spin mx-auto mb-3" />
-              <p className="text-xs text-white/40">Verfügbarkeit wird geprüft...</p>
+              <div className="w-6 h-6 border-2 border-white/20 border-t-white rounded-full animate-spin mx-auto mb-3" />
+              <p className="text-xs text-[#666]">Verfügbarkeit wird geprüft...</p>
             </div>
           ) : availableSlots.length === 0 ? (
             <div className="text-center py-8">
-              <p className="text-sm text-white/50">Keine freien Termine an diesem Tag.</p>
-              <p className="text-xs text-white/30 mt-1">Bitte wähle einen anderen Tag.</p>
+              <p className="text-sm text-[#888]">Keine freien Termine an diesem Tag.</p>
+              <p className="text-xs text-[#555] mt-1">Bitte wähle einen anderen Tag.</p>
             </div>
           ) : (
             <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 gap-y-3">
@@ -240,8 +240,8 @@ export default function Booking() {
                   onClick={() => { setSelectedTime(time); setStep(3); }}
                   className={`py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
                     selectedTime === time
-                      ? 'bg-brand-accent text-brand-black'
-                      : 'bg-white/5 hover:bg-white/10 text-white/70'
+                      ? 'bg-white text-black'
+                      : 'bg-white/5 hover:bg-white/10 text-[#888]'
                   }`}
                 >
                   {time}
@@ -255,41 +255,41 @@ export default function Booking() {
       {/* Step 3: Contact Info */}
       {step === 3 && (
         <div>
-          <h3 className="text-lg font-bold tracking-tight mb-1">Fast geschafft</h3>
-          <p className="text-xs text-white/40 mb-6">
+          <h3 className="text-lg font-bold tracking-tight mb-1 text-white">Fast geschafft</h3>
+          <p className="text-xs text-[#666] mb-6">
             {duration} Min · {formatDate(dates[selectedDate])} · {selectedTime} Uhr
           </p>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="text-[10px] font-bold uppercase tracking-widest text-white/30 block mb-2">Name</label>
+              <label className="text-[10px] font-bold uppercase tracking-widest text-[#555] block mb-2">Name</label>
               <input
                 type="text"
                 required
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-brand-accent/40 transition-colors"
+                className="w-full bg-white/5 border border-[#1a1a1a] rounded-lg px-4 py-3 text-sm text-white placeholder:text-[#444] focus:outline-none focus:border-white/20 transition-colors"
                 placeholder="Dein Name"
               />
             </div>
             <div>
-              <label className="text-[10px] font-bold uppercase tracking-widest text-white/30 block mb-2">E-Mail</label>
+              <label className="text-[10px] font-bold uppercase tracking-widest text-[#555] block mb-2">E-Mail</label>
               <input
                 type="email"
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-brand-accent/40 transition-colors"
+                className="w-full bg-white/5 border border-[#1a1a1a] rounded-lg px-4 py-3 text-sm text-white placeholder:text-[#444] focus:outline-none focus:border-white/20 transition-colors"
                 placeholder="dein@email.de"
               />
             </div>
             <div>
-              <label className="text-[10px] font-bold uppercase tracking-widest text-white/30 block mb-2">Telefon</label>
+              <label className="text-[10px] font-bold uppercase tracking-widest text-[#555] block mb-2">Telefon</label>
               <input
                 type="tel"
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-brand-accent/40 transition-colors"
+                className="w-full bg-white/5 border border-[#1a1a1a] rounded-lg px-4 py-3 text-sm text-white placeholder:text-[#444] focus:outline-none focus:border-white/20 transition-colors"
                 placeholder="+49 ..."
               />
             </div>
@@ -299,7 +299,7 @@ export default function Booking() {
             <button
               type="submit"
               disabled={submitting}
-              className="w-full btn-pill btn-accent btn-magnetic mt-2 disabled:opacity-50"
+              className="btn-primary w-full mt-2 disabled:opacity-50"
             >
               {submitting ? 'Wird gesendet...' : 'Termin anfragen'}
             </button>

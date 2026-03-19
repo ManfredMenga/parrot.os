@@ -1,11 +1,9 @@
 import type { Metadata } from 'next';
-import SubpageHeader from '@/components/SubpageHeader';
-import SubpageFooter from '@/components/SubpageFooter';
-import ClientEffects from '@/components/ClientEffects';
-import TextReveal from '@/components/TextReveal';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Impressum | LeitSalon',
+  title: 'Impressum | Leitkraft',
   description: 'Impressum und Angaben gemäß § 5 TMG.',
 };
 
@@ -58,40 +56,38 @@ const sections = [
 
 export default function ImpressumPage() {
   return (
-    <main className="min-h-screen bg-white">
-      <ClientEffects />
-      <SubpageHeader />
+    <main className="min-h-screen bg-black">
+      <header className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-[#1a1a1a]">
+        <div className="max-w-3xl mx-auto px-6 md:px-12 h-12 flex justify-between items-center">
+          <Link href="/" className="font-bold text-[15px] tracking-tight text-white flex items-center gap-2">
+            <Image src="/images/logo-white.png" alt="Leitkraft" width={26} height={26} className="-mr-0.5" />
+            Leitkraft
+          </Link>
+          <Link href="/" className="text-[13px] text-[#666] hover:text-white transition-colors">Zurück</Link>
+        </div>
+      </header>
 
-      {/* Hero */}
-      <section className="pt-32 pb-0 md:pt-44 md:pb-0">
+      <section className="pt-32 pb-0 md:pt-40">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
-          <p className="reveal text-[10px] font-bold uppercase tracking-widest text-brand-accent mb-8 md:mb-12">
-            <span className="accent-dot mr-3" />
-            Rechtliches
-          </p>
-          <h1 className="text-fluid-section font-bold tracking-tighter text-brand-black mb-6">
-            <TextReveal text="Impressum" />
-          </h1>
-          <div className="line-draw h-[1px] bg-black/10" />
+          <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-[#666] mb-6">Rechtliches</p>
+          <h1 className="text-fluid-section font-bold tracking-tight text-white mb-6">Impressum</h1>
+          <div className="h-[1px] bg-[#1a1a1a]" />
         </div>
       </section>
 
-      {/* Content */}
       <section className="py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-6 md:px-12">
           {sections.map((section, i) => (
-            <div key={i} className="reveal delay-1 mb-12 last:mb-0">
-              <div className="sweep-line h-[1px] bg-brand-accent/10 mb-8" />
-              <h2 className="text-base font-bold text-brand-black mb-4 tracking-tight">{section.title}</h2>
-              <div className="text-sm text-brand-muted font-medium leading-relaxed">
+            <div key={i} className="mb-12 last:mb-0">
+              <div className="h-[1px] bg-[#1a1a1a] mb-8" />
+              <h2 className="text-base font-bold text-white mb-4 tracking-tight">{section.title}</h2>
+              <div className="text-[15px] text-[#999] leading-relaxed">
                 {section.content}
               </div>
             </div>
           ))}
         </div>
       </section>
-
-      <SubpageFooter />
     </main>
   );
 }
