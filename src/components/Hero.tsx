@@ -67,8 +67,8 @@ function getStyle(offset: number): React.CSSProperties {
     transition: 'transform 0.9s cubic-bezier(0.16,1,0.3,1), opacity 0.9s ease, z-index 0s',
   };
   if (offset === 0) return { ...base, transform: 'translateX(-50%) translateY(-55%) rotate(0deg) scale(1)', zIndex: 10, opacity: 1 };
-  if (offset === 1) return { ...base, transform: 'translateX(22%) translateY(-40%) rotate(5deg) scale(0.97)', zIndex: 0, opacity: 0.55 };
-  return { ...base, transform: 'translateX(-122%) translateY(-63%) rotate(-5deg) scale(0.97)', zIndex: 0, opacity: 0.55 };
+  if (offset === 1) return { ...base, transform: 'translateX(-5%) translateY(-40%) rotate(5deg) scale(0.97)', zIndex: 0, opacity: 0.55 };
+  return { ...base, transform: 'translateX(-95%) translateY(-63%) rotate(-5deg) scale(0.97)', zIndex: 0, opacity: 0.55 };
 }
 
 export default function Hero() {
